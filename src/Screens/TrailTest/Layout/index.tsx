@@ -22,7 +22,7 @@ export default function Layout ({
             <div className="phaseInfo">
               <div className="circlesBorder"></div>
               <div className="content">
-                <h1 className="Title-Text-Bold">Fase {currentPhase+1}</h1>
+                <h1 className="Title-Text-Medium">Fase {currentPhase+1}</h1>
                 
                 {currentPhase === 0 ?
                   <p className="Large-Text-Regular">Pense na posição do número 1.</p>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import shuffleArray from '../../utils';
-import Layout from './Layout/';
+import Layout from './Layout';
 import './styles.css';
 
 export default function TrailTest () {

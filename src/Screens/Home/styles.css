@@ -1,0 +1,53 @@
+.Home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.Home .content{
+    background-color: #FFF;
+    width: 50vw;
+    height: 60vh;
+    display: grid;
+    grid-template-rows: 30px 1fr 30px;
+    padding: 20px;
+    box-shadow: 10px 10px 5px rgba(43, 43, 43, 0.4);
+}
+
+.Home .content .circlesBorder::before, .Home .content .circlesBorder::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: var(--secundaryColor);
+    position: absolute;
+}
+
+.Home .content .circlesBorder::after{
+    position: relative;
+    float: right;
+}
+
+.Home .options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Home .option{
+    border: 2px solid var(--tercearyColor);
+    text-align: center;
+    margin: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Home .option .Title-Text-Medium{
+    margin: 10px;
+}
+
+.Home .option:hover .Title-Text-Medium{
+    text-shadow: -2px 0 var(--tercearyColor), 0 2px var(--tercearyColor), 2px 0 var(--tercearyColor), 0 -2px var(--tercearyColor);
+}

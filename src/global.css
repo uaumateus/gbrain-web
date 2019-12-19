@@ -17,13 +17,23 @@ body{
   color: var(--tercearyColor);
 }
 
-.Title-Text-Bold{
+.Title-Text-Medium{
   font-family: 'Playfair Display', serif;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 600;
   margin: 0;
   color: #FFC107;
   text-shadow: -2px 0 #DB9000, 0 2px #DB9000, 2px 0 #DB9000, 0 -2px #DB9000;
+}
+
+.Title-Text{
+  font-family: 'Playfair Display', serif;
+  font-size: 6em;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #FFC107;
+  text-shadow: -3px 0 #DB9000, 0 3px #DB9000, 3px 0 #DB9000, 0 -3px #DB9000;
+  letter-spacing: 5px;
 }
 
 .Large-Text-Regular{
@@ -52,14 +62,14 @@ body{
   .Card-Text-Bold{
     font-size: 8em;
   }
-  .Title-Text-Bold{
-    font-size: 4.5em;
+  .Title-Text-Medium{
+    font-size: 3em;
   }
   .Large-Text-Regular, .Large-Text-Bold{
-    font-size: 2em;
+    font-size: 1.5em;
   }
   .PrevItem-Text-Regular{
-    font-size: 15em;
+    font-size: 8em;
   }
 }
 
