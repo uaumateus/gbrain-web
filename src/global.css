@@ -1,0 +1,70 @@
+html{
+  --primaryColor: #086307;
+  --secundaryColor: #FFC107;
+  --tercearyColor: #2196F3;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--primaryColor);
+}
+
+.Card-Text-Bold{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5em;
+  font-weight: 700;
+  color: var(--tercearyColor);
+}
+
+.Title-Text-Bold{
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  font-weight: 600;
+  margin: 0;
+  color: #FFC107;
+  text-shadow: -2px 0 #DB9000, 0 2px #DB9000, 2px 0 #DB9000, 0 -2px #DB9000;
+}
+
+.Large-Text-Regular{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #000;
+}
+
+.Large-Text-Bold{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #000;
+}
+
+.PrevItem-Text-Regular{
+  font-family: 'Roboto', sans-serif;
+  font-size: 10em;
+  font-weight: 400;
+  margin: 0;
+  color: #000;
+}
+
+@media (min-width: 1200px) {
+  .Card-Text-Bold{
+    font-size: 8em;
+  }
+  .Title-Text-Bold{
+    font-size: 4.5em;
+  }
+  .Large-Text-Regular, .Large-Text-Bold{
+    font-size: 2em;
+  }
+  .PrevItem-Text-Regular{
+    font-size: 15em;
+  }
+}
+
+@media (max-height: 900px) {
+  .PrevItem-Text-Regular{
+    font-size: 10em;
+  }
+}

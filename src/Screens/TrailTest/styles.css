@@ -1,38 +1,107 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-
-.Home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(219, 219, 219);
+.TrailTest{
     width: 100vw;
     height: 100vh;
-}
-
-.trails{
-    width: 50vw;
-    height: 50vh;
-    border-radius: 10px;
-    background-color: white;
     display: grid;
-    grid-template-areas: "1fr 1fr 1fr" "1fr 1fr 1fr" "1fr 1fr 1fr"
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 10vw;
+    align-items: center;
 }
 
-.trails div{
+.TrailTest .phaseInfo{
+    background-color: #FFFFFF;
+    height: 70vh;
+    margin-left: 100px;
+    box-shadow: 10px 10px 5px rgba(43, 43, 43, 0.4);
+    display: grid;
+    grid-template-rows: 30px 1fr 30px;
+    padding: 20px;
+}
+
+.TrailTest .phaseInfo .content{
+    text-align: center;
+}
+
+.TrailTest .circlesBorder::before, .TrailTest .circlesBorder::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: var(--secundaryColor);
+    position: absolute;
+}
+
+.TrailTest .circlesBorder::after{
+    position: relative;
+    float: right;
+}
+
+.TrailTest .trails{
+    align-items: center;
+    height: 80vh;
+    margin-right: 100px;
+    display: grid;
+    grid-template-areas: "1fr 1fr 1fr" "1fr 1fr 1fr" "1fr 1fr 1fr";
+}
+
+.TrailTest .trails .cardOption{
+    width: 12vw;
+    height: 12vw;
     border: 1px solid #000;
+    box-shadow: 8px 8px 5px rgba(43, 43, 43, 0.4);
+    border-radius: 10px;
+    background-color: #FFF;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.TrailTest .trails .cardOption p{
+    border: 2px solid var(--tercearyColor);
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardUser{
+    display: grid;
+    grid-template-areas: "1fr 1fr 1fr" "1fr 1fr 1fr" "1fr 1fr 1fr";
+    grid-gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    width: 12vw;
+    height: 12vw;
+}
+
+.cardUser i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.cardUser div{
+    display: flex;
+    width: 3vw;
+    height: 3vw;
 }
 
 .userInitial{
     margin: 0;
+    background-color: var(--secundaryColor);
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
 }
 
-.moveUserTop{
+.arrowActive{
+    color: var(--tercearyColor) !important;
+}
+
+/* .moveUserTop{
     animation: upUser .5s linear;
     margin-top: -30vh;
     opacity: 0;
@@ -54,7 +123,7 @@ body{
     animation: downUser .5s linear;
     margin-bottom: -30vh;
     opacity: 0;
-}
+} */
 
 @keyframes upUser{
     0%{

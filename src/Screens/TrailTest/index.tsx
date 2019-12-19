@@ -4,7 +4,7 @@ import Layout from './Layout/';
 import './styles.css';
 
 export default function TrailTest () {
-    const [classUser, setClassUser] = useState<string>("userInitial");
+    const [classUser, setClassUser] = useState<string>("");
     const [valuesQuestions, setValuesQuestions] = useState<string[]>([]);
     const [currentPhase, setCurrentPhase] = useState<number>(0);
     const [actualPhase, setActualPhase] = useState<string[]>([]);
@@ -32,8 +32,8 @@ export default function TrailTest () {
 
     function validadeResponse(e: string){
         setTimeout(() => {
-            setClassUser("userInitial");
-        }, 700);
+            setClassUser("");
+        }, 500);
         switch(e){ //left: 0, top: 1, right: 2, bottom: 3
             case "left":
                 if(actualPhase[0] === valuesQuestions[currentPhase]){
@@ -73,25 +73,25 @@ export default function TrailTest () {
     function onKeyPressed(e: any){
         switch(e.keyCode){
             case 37:
-                if(classUser === "userInitial"){
+                if(classUser === ""){
                     setClassUser("moveUserLeft");
                     validadeResponse("left");
                 }
             break;
             case 38:
-                if(classUser === "userInitial"){
+                if(classUser === ""){
                     setClassUser("moveUserTop");
                     validadeResponse("top");
                 }
             break;
             case 39:
-                if(classUser === "userInitial"){
+                if(classUser === ""){
                     setClassUser("moveUserRight");
                     validadeResponse("right");
                 }
             break;
             case 40:
-                if(classUser === "userInitial"){
+                if(classUser === ""){
                     setClassUser("moveUserBottom");
                     validadeResponse("bottom");
                 }
@@ -104,6 +104,8 @@ export default function TrailTest () {
             actualPhase={actualPhase}
             onKeyPressed={onKeyPressed}
             classUser={classUser}
+            currentPhase={currentPhase}
+            valuesQuestions={valuesQuestions}
         />
     );
 }
