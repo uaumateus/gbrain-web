@@ -6,19 +6,16 @@ import '../styles.css';
 
 export default function Layout () {
     return (
-        <div className="Home">
+        <div className="TrailLevel">
             <p className="Title-Text">GBrain</p>
             <div className="content">
                 <div className="circlesBorder"></div>
                 <div className="options">
-                    <Link to="traillevel" className="option">
-                        <p className="Title-Text-Medium">Teste de Trilha</p>
+                    <Link to="trailtest" className="option">
+                        <p className="Title-Text-Medium">Iniciante</p>
                     </Link>
                     <Link to="trailtest" className="option">
-                        <p className="Title-Text-Medium">Treinar</p>
-                    </Link>
-                    <Link to="trailtest" className="option">
-                        <p className="Title-Text-Medium">Opções</p>
+                        <p className="Title-Text-Medium">Avançado</p>
                     </Link>
                 </div>
                 <div className="circlesBorder"></div>

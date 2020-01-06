@@ -7,7 +7,15 @@
     align-items: center;
 }
 
-.TrailTest .phaseInfo{
+.selectTrailSize{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TrailTest .phaseInfo, .selectTrailSize .phaseInfo{
     background-color: #FFFFFF;
     height: 70vh;
     margin-left: 100px;
@@ -17,11 +25,18 @@
     padding: 20px;
 }
 
-.TrailTest .phaseInfo .content{
+.selectTrailSize .phaseInfo{
+    height: 70vh;
+    width: 30vw;
+    margin-left: 0;
+}
+
+.TrailTest .phaseInfo .content, .selectTrailSize .phaseInfo .content{
     text-align: center;
 }
 
-.TrailTest .circlesBorder::before, .TrailTest .circlesBorder::after{
+.TrailTest .circlesBorder::before, .TrailTest .circlesBorder::after
+.selectTrailSize .circlesBorder::before, .selectTrailSize .circlesBorder::after{
     content: '';
     width: 30px;
     height: 30px;
@@ -30,7 +45,7 @@
     position: absolute;
 }
 
-.TrailTest .circlesBorder::after{
+.TrailTest .circlesBorder::after, .selectTrailSize .circlesBorder::after{
     position: relative;
     float: right;
 }

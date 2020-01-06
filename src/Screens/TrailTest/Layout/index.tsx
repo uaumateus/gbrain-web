@@ -1,12 +1,15 @@
 import React from 'react';
 import '../styles.css';
 
+import Feedback from '../../../Components/Feedback';
+
 interface Props {
   actualPhase: string[];
   onKeyPressed: (e: any) => void;
   classUser: string;
   currentPhase: number;
   valuesQuestions: string[];
+  feedback: string;
 }
 
 export default function Layout ({
@@ -14,11 +17,15 @@ export default function Layout ({
   onKeyPressed,
   classUser,
   currentPhase,
-  valuesQuestions
+  valuesQuestions,
+  feedback
 } : Props) {
 
     return (
         <div tabIndex={0} className="TrailTest" onKeyDown={(e) => onKeyPressed(e)} >
+            {feedback !== "" &&
+              <Feedback feedback={feedback}/>
+            }
             <div className="phaseInfo">
               <div className="circlesBorder"></div>
               <div className="content">

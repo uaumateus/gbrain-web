@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Screens/Home';
+import TrailLevel from './Screens/TrailLevel';
 import TrailTest from './Screens/TrailTest';
 
 function Routes () {
@@ -11,6 +12,7 @@ function Routes () {
             <Switch>
                 <Route path="/" exact component={Home}/>
                 <Route path="/trailtest" exact component={TrailTest}/>
+                <Route path="/traillevel" exact component={TrailLevel}/>
             </Switch>
         </BrowserRouter>
     );

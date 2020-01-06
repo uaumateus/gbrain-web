@@ -1,0 +1,46 @@
+.Feedback{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Feedback div{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fade 2.8s;
+}
+
+.Feedback .check{
+    background-color: #00cc11;
+}
+
+.Feedback .error{
+    background-color: #cc0000;
+}
+
+.Feedback div i{
+    font-size: 8em;
+    color: #FFF;
+}
+
+@keyframes fade{
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
