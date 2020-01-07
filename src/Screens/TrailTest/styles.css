@@ -116,74 +116,46 @@
     color: var(--tercearyColor) !important;
 }
 
-/* .moveUserTop{
-    animation: upUser .5s linear;
-    margin-top: -30vh;
-    opacity: 0;
+.selectTrailSize .amountControll{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.moveUserLeft{
-    animation: leftUser .5s linear;
-    margin-left: -30vh;
-    opacity: 0;
+.selectTrailSize .arrowControll{
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.moveUserRight{
-    animation: rightUser .5s linear;
-    margin-right: -30vh;
-    opacity: 0;
+.selectTrailSize .valueAmount{
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--tercearyColor);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.moveUserBottom{
-    animation: downUser .5s linear;
-    margin-bottom: -30vh;
-    opacity: 0;
-} */
-
-@keyframes upUser{
-    0%{
-        margin-top: 0;
-        opacity: 100%;
-    }
-    50%{ opacity: 100%; }
-    100%{
-        margin-top: -30vh;
-        opacity: 0;
-    }
+.selectTrailSize .valueAmount .Large-Text-Regular{
+    font-size: 2.3em;
 }
 
-@keyframes leftUser{
-    0%{
-        margin-left: 0;
-        opacity: 100%;
-    }
-    50%{ opacity: 100%; }
-    100%{
-        margin-left: -40vh;
-        opacity: 0;
-    }
-}
-
-@keyframes rightUser{
-    0%{
-        margin-right: 0;
-        opacity: 100%;
-    }
-    50%{ opacity: 100%; }
-    100%{
-        margin-right: -40vh;
-        opacity: 0;
-    }
-}
-
-@keyframes downUser{
-    0%{
-        margin-bottom: 0;
-        opacity: 100%;
-    }
-    50%{ opacity: 100%; }
-    100%{
-        margin-bottom: -30vh;
-        opacity: 0;
-    }
+.selectTrailSize .submit{
+    padding: 6px 20px;
+    margin-top: 25px;
+    background: var(--tercearyColor);
+    border: 1px solid var(--tercearyColor);
+    border-radius: 50px;
+    color: #FFF;
+    cursor: pointer;
 }

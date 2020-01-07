@@ -11,10 +11,10 @@ export default function Layout () {
             <div className="content">
                 <div className="circlesBorder"></div>
                 <div className="options">
-                    <Link to="trailtest" className="option">
+                    <Link to="trailtest/beginner" className="option">
                         <p className="Title-Text-Medium">Iniciante</p>
                     </Link>
-                    <Link to="trailtest" className="option">
+                    <Link to="trailtest/advanced" className="option">
                         <p className="Title-Text-Medium">Avançado</p>
                     </Link>
                 </div>

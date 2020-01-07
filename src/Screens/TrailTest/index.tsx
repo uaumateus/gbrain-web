@@ -4,7 +4,7 @@ import Layout from './Layout';
 import './styles.css';
 import SelectTrailSize from './Layout/selectTrailSize';
 
-export default function TrailTest () {
+export default function TrailTest (props: any) {
     const [trailSize, setTrailSize] = useState<number>(4);
     const [startTrail, setStartTrail] = useState<boolean>(false);
     const [classUser, setClassUser] = useState<string>("");
@@ -15,21 +15,42 @@ export default function TrailTest () {
 
     useEffect(() => {
         generateNewPhase();
-    }, []);
+    }, [startTrail]);
 
     function generateNewPhase(){
-        if(currentPhase === 0){
-            var momentValuesQuestions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-            setValuesQuestions(momentValuesQuestions);
-            let momentArray = [momentValuesQuestions[currentPhase], momentValuesQuestions[currentPhase+1], momentValuesQuestions[currentPhase+2], momentValuesQuestions[currentPhase+3]];
-            setActualPhase(shuffleArray(momentArray));
-        }
-        else{
-            if(currentPhase <= valuesQuestions.length-4){
-                let momentArray = [valuesQuestions[currentPhase], valuesQuestions[currentPhase+1], valuesQuestions[currentPhase+2], valuesQuestions[currentPhase+3]];
+        if(startTrail){
+            if(currentPhase === 0){
+                var momentValuesQuestions = [];
+                if(props.match.params.type === "beginner"){
+                    for(var i = 1; i <= trailSize; i++){
+                        momentValuesQuestions.push(i.toString());
+                    }
+                }
+                else if(props.match.params.type === "advanced"){
+                    const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "W", "Y", "Z"];
+                    let auxLetter = 0, auxNumber = 1;
+                    for(var i = 0; i < trailSize; i++){
+                        if(i > 0 && i % 2 !== 0){
+                            momentValuesQuestions[i] = letters[auxLetter];
+                            auxLetter++;
+                        }else{
+                            momentValuesQuestions[i] = auxNumber.toString();
+                            auxNumber++;
+                        }
+                    }
+                }
+                console.log(momentValuesQuestions)
+                setValuesQuestions(momentValuesQuestions);
+                let momentArray = [momentValuesQuestions[currentPhase], momentValuesQuestions[currentPhase+1], momentValuesQuestions[currentPhase+2], momentValuesQuestions[currentPhase+3]];
                 setActualPhase(shuffleArray(momentArray));
-            }else
-                setActualPhase(shuffleArray(actualPhase));
+            }
+            else{
+                if(currentPhase <= valuesQuestions.length-4){
+                    let momentArray = [valuesQuestions[currentPhase], valuesQuestions[currentPhase+1], valuesQuestions[currentPhase+2], valuesQuestions[currentPhase+3]];
+                    setActualPhase(shuffleArray(momentArray));
+                }else
+                    setActualPhase(shuffleArray(actualPhase));
+            }
         }
     }
 

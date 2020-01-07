@@ -11,7 +11,7 @@ function Routes () {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home}/>
-                <Route path="/trailtest" exact component={TrailTest}/>
+                <Route path="/trailtest/:type" exact component={TrailTest}/>
                 <Route path="/traillevel" exact component={TrailLevel}/>
             </Switch>
         </BrowserRouter>
