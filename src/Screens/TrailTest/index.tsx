@@ -3,8 +3,10 @@ import shuffleArray from '../../utils';
 import Layout from './Layout';
 import './styles.css';
 import SelectTrailSize from './Layout/selectTrailSize';
+// @ts-ignore
+import { withRouter } from "react-router-dom";
 
-export default function TrailTest (props: any) {
+function TrailTest (props: any) {
     const [trailSize, setTrailSize] = useState<number>(4);
     const [startTrail, setStartTrail] = useState<boolean>(false);
     const [classUser, setClassUser] = useState<string>("");
@@ -45,11 +47,15 @@ export default function TrailTest (props: any) {
                 setActualPhase(shuffleArray(momentArray));
             }
             else{
-                if(currentPhase <= valuesQuestions.length-4){
-                    let momentArray = [valuesQuestions[currentPhase], valuesQuestions[currentPhase+1], valuesQuestions[currentPhase+2], valuesQuestions[currentPhase+3]];
-                    setActualPhase(shuffleArray(momentArray));
-                }else
-                    setActualPhase(shuffleArray(actualPhase));
+                if(currentPhase !== valuesQuestions.length-1){
+                    if(currentPhase <= valuesQuestions.length-4){
+                        let momentArray = [valuesQuestions[currentPhase], valuesQuestions[currentPhase+1], valuesQuestions[currentPhase+2], valuesQuestions[currentPhase+3]];
+                        setActualPhase(shuffleArray(momentArray));
+                    }else
+                        setActualPhase(shuffleArray(actualPhase));
+                }
+                else
+                    props.history.push("/result");
             }
         }
     }
@@ -57,7 +63,7 @@ export default function TrailTest (props: any) {
     function validadeResponse(e: string){
         setTimeout(() => {
             setClassUser("");
-        }, 500);
+        }, 200);
         var feedbackValue = null;
         switch(e){ //left: 0, top: 1, right: 2, bottom: 3
             case "left":
@@ -66,7 +72,7 @@ export default function TrailTest (props: any) {
                     setTimeout(() => {
                         setCurrentPhase(currentPhase+1);
                         generateNewPhase();
-                    }, 3000);
+                    }, 2000);
                 }else
                     feedbackValue = false;
             break;
@@ -76,7 +82,7 @@ export default function TrailTest (props: any) {
                     setTimeout(() => {
                         setCurrentPhase(currentPhase+1);
                         generateNewPhase();
-                    }, 3000);
+                    }, 2000);
                 }else
                     feedbackValue = false;
             break;
@@ -86,7 +92,7 @@ export default function TrailTest (props: any) {
                     setTimeout(() => {
                         setCurrentPhase(currentPhase+1);
                         generateNewPhase();
-                    }, 3000);
+                    }, 2000);
                 }else
                     feedbackValue = false;
             break;
@@ -96,7 +102,7 @@ export default function TrailTest (props: any) {
                     setTimeout(() => {
                         setCurrentPhase(currentPhase+1);
                         generateNewPhase();
-                    }, 3000);
+                    }, 2000);
                 }else
                     feedbackValue = false;
             break;
@@ -104,15 +110,15 @@ export default function TrailTest (props: any) {
         if(feedbackValue)
             setTimeout(() => {
                 setFeedback("check");
-            }, 500);
+            }, 200);
         else
             setTimeout(() => {
                 setFeedback("error");
-            }, 500);
+            }, 200);
 
         setTimeout(() => {
             setFeedback("");
-        }, 3000);
+        }, 2000);
     }
 
     function onKeyPressed(e: any){
@@ -165,3 +171,5 @@ export default function TrailTest (props: any) {
         </>
     );
 }
+
+export default withRouter(TrailTest)

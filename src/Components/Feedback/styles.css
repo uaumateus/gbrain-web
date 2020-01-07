@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fade 2.8s;
+    animation: fade 1.8s;
 }
 
 .Feedback .check{

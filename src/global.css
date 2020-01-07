@@ -58,6 +58,16 @@ body{
   color: #000;
 }
 
+.submit{
+  padding: 6px 20px;
+  margin-top: 25px;
+  background: var(--tercearyColor);
+  border: 1px solid var(--tercearyColor);
+  border-radius: 50px;
+  color: #FFF;
+  cursor: pointer;
+}
+
 @media (min-width: 1200px) {
   .Card-Text-Bold{
     font-size: 8em;

@@ -149,13 +149,3 @@
 .selectTrailSize .valueAmount .Large-Text-Regular{
     font-size: 2.3em;
 }
-
-.selectTrailSize .submit{
-    padding: 6px 20px;
-    margin-top: 25px;
-    background: var(--tercearyColor);
-    border: 1px solid var(--tercearyColor);
-    border-radius: 50px;
-    color: #FFF;
-    cursor: pointer;
-}

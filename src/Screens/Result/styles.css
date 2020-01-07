@@ -1,0 +1,58 @@
+.Result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.Result .content{
+    background-color: #FFF;
+    width: 50vw;
+    height: 40vh;
+    display: grid;
+    grid-template-rows: 30px 1fr 30px;
+    padding: 20px;
+    box-shadow: 10px 10px 5px rgba(43, 43, 43, 0.4);
+}
+
+.Result .content .circlesBorder::before, .Result .content .circlesBorder::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: var(--secundaryColor);
+    position: absolute;
+}
+
+.Result .content .circlesBorder::after{
+    position: relative;
+    float: right;
+}
+
+.Result .options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Result .option{
+    border: 2px solid var(--tercearyColor);
+    text-align: center;
+    margin: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Result .option .Title-Text-Medium{
+    margin: 10px;
+}
+
+.Result .option:hover .Title-Text-Medium{
+    text-shadow: -2px 0 var(--tercearyColor), 0 2px var(--tercearyColor), 2px 0 var(--tercearyColor), 0 -2px var(--tercearyColor);
+}
+
+.Result .submit{
+    width: 150px;
+}
