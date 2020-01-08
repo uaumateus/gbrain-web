@@ -35,6 +35,13 @@
     text-align: center;
 }
 
+.selectTrailSize .phaseInfo .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .TrailTest .circlesBorder::before, .TrailTest .circlesBorder::after
 .selectTrailSize .circlesBorder::before, .selectTrailSize .circlesBorder::after{
     content: '';
