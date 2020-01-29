@@ -20,8 +20,8 @@ export default function SelectDevice () {
     }, []);
 
     useEffect(() => {
-        if(userLogin)
-            getInfos();
+        if(userLogin === false)
+            setLoading("Nenhum usuário conectado. Entre com sua conta no EmotivApp e tente novamente!");
     }, [userLogin]);
 
     function getInfos() {
@@ -40,6 +40,8 @@ export default function SelectDevice () {
 
     function selectDevice (device : string){
         setLoading("Conectando dispositivo");
+        if(device === "emotiv")
+            getInfos();
     }
 
     return (
