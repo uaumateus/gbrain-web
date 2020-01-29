@@ -1,0 +1,74 @@
+.SelectDevice{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.SelectDevice .content{
+  background-color: #FFF;
+  width: 50vw;
+  height: 50vh;
+  display: grid;
+  grid-template-rows: 30px 1fr 30px;
+  padding: 20px;
+  box-shadow: 10px 10px 5px rgba(43, 43, 43, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.SelectDevice .content .circlesBorder::before, .SelectDevice .content .circlesBorder::after{
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--secundaryColor);
+  position: absolute;
+}
+
+.SelectDevice .content .circlesBorder::after{
+  position: relative;
+  float: right;
+}
+
+.SelectDevice .options{
+  text-align: center;
+}
+
+.SelectDevice .options div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5vw;
+  padding: 0 2vw;
+}
+
+.SelectDevice .option{
+  text-align: center;
+  margin: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: grid;
+  grid-template-rows: 1fr 70px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.SelectDevice .option:hover{
+  border: 2px solid var(--tercearyColor);
+}
+
+.SelectDevice .option img{
+  display: flex;
+  justify-self: center;
+  width: 50%;
+}
+
+.SelectDevice .option .Title-Text-Medium{
+  margin: 10px;
+}
+
+.SelectDevice .option:hover .Title-Text-Medium{
+  text-shadow: -2px 0 var(--tercearyColor), 0 2px var(--tercearyColor), 2px 0 var(--tercearyColor), 0 -2px var(--tercearyColor);
+}
