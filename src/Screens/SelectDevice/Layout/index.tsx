@@ -9,11 +9,15 @@ import '../styles.css';
 interface Props {
   loading: string;
   selectDevice:(e: string) => void;
+  getUserLogin: () => void;
+  isAuthorized: () => void;
 }
 
 export default function Layout ({
   loading,
-  selectDevice
+  selectDevice,
+  getUserLogin,
+  isAuthorized
 } : Props) {
     return (
         <div className="SelectDevice">
@@ -35,8 +39,18 @@ export default function Layout ({
                           </div>
                       </div>
                   :
-                  <div>
+                  <div className="loading">
                     <p className="Large-Text-Bold">{loading}</p>
+                    {loading !== 'Conectando dispositivo' &&
+                      <>
+                        {loading === "Nenhum usuário conectado. Entre com sua conta no EmotivApp e tente novamente!" &&
+                          <button className="submit Large-Text-Regular" onClick={getUserLogin}>Continuar</button>
+                        }
+                        {loading === "Por favor autorize o GBrain no seu EmotivApp para proseguir." &&
+                          <button className="submit Large-Text-Regular" onClick={isAuthorized}>Continuar</button>
+                        }
+                      </>
+                    }
                   </div>
               }
               <div className="circlesBorder"></div>
